@@ -7,6 +7,10 @@
 .AppleDouble
 .LSOverride
 
+## Landmark Remark files ##
+keys.plist
+GoogleService-Info.plist
+
 # Icon must end with two \r
 Icon
 

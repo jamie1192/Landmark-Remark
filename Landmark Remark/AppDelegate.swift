@@ -8,15 +8,24 @@
 
 import UIKit
 import CoreData
+import GoogleMaps
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
+	
 
+	private let apiKey = getApiKey(keyname: "APIKey")
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		// Override point for customization after application launch.
+		
+		FirebaseApp.configure()
+		//Provide Maps API key 
+		GMSServices.provideAPIKey(apiKey)
+		
 		return true
 	}
 

@@ -7,15 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D7F65A4217DBBA100435948 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7D7F65A3217DBBA100435948 /* GoogleService-Info.plist */; };
 		7DB7CC5E2179716C00C8B9B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB7CC5D2179716C00C8B9B5 /* AppDelegate.swift */; };
 		7DB7CC602179716C00C8B9B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB7CC5F2179716C00C8B9B5 /* ViewController.swift */; };
 		7DB7CC632179716C00C8B9B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DB7CC612179716C00C8B9B5 /* Main.storyboard */; };
 		7DB7CC662179716C00C8B9B5 /* Landmark_Remark.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7DB7CC642179716C00C8B9B5 /* Landmark_Remark.xcdatamodeld */; };
 		7DB7CC682179716D00C8B9B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DB7CC672179716D00C8B9B5 /* Assets.xcassets */; };
 		7DB7CC6B2179716D00C8B9B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DB7CC692179716D00C8B9B5 /* LaunchScreen.storyboard */; };
+		7DB7CC73217974A200C8B9B5 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7DB7CC72217974A200C8B9B5 /* keys.plist */; };
+		7DB7CC75217974D100C8B9B5 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB7CC74217974D100C8B9B5 /* ApiKey.swift */; };
+		83B259C4C889ECA3F3415A05 /* Pods_Landmark_Remark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2FFD834C5D96392C3F2F985 /* Pods_Landmark_Remark.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		107633E39D7DEE57A13EB706 /* Pods-Landmark Remark.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Landmark Remark.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Landmark Remark/Pods-Landmark Remark.debug.xcconfig"; sourceTree = "<group>"; };
+		7D7F65A3217DBBA100435948 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7DB7CC5A2179716C00C8B9B5 /* Landmark Remark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Landmark Remark.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DB7CC5D2179716C00C8B9B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DB7CC5F2179716C00C8B9B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +30,10 @@
 		7DB7CC672179716D00C8B9B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DB7CC6A2179716D00C8B9B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7DB7CC6C2179716D00C8B9B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DB7CC72217974A200C8B9B5 /* keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
+		7DB7CC74217974D100C8B9B5 /* ApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
+		A2FFD834C5D96392C3F2F985 /* Pods_Landmark_Remark.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Landmark_Remark.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7EA48986CBD62634BA5DECB /* Pods-Landmark Remark.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Landmark Remark.release.xcconfig"; path = "Pods/Target Support Files/Pods-Landmark Remark/Pods-Landmark Remark.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +41,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83B259C4C889ECA3F3415A05 /* Pods_Landmark_Remark.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D707B399ABFBFD46F6C0F9C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A2FFD834C5D96392C3F2F985 /* Pods_Landmark_Remark.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7DB7CC512179716C00C8B9B5 = {
 			isa = PBXGroup;
 			children = (
 				7DB7CC5C2179716C00C8B9B5 /* Landmark Remark */,
 				7DB7CC5B2179716C00C8B9B5 /* Products */,
+				FD4FCBC420D06CF4917A9BC5 /* Pods */,
+				1D707B399ABFBFD46F6C0F9C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,14 +78,26 @@
 			isa = PBXGroup;
 			children = (
 				7DB7CC5D2179716C00C8B9B5 /* AppDelegate.swift */,
+				7DB7CC74217974D100C8B9B5 /* ApiKey.swift */,
+				7DB7CC72217974A200C8B9B5 /* keys.plist */,
 				7DB7CC5F2179716C00C8B9B5 /* ViewController.swift */,
 				7DB7CC612179716C00C8B9B5 /* Main.storyboard */,
 				7DB7CC672179716D00C8B9B5 /* Assets.xcassets */,
 				7DB7CC692179716D00C8B9B5 /* LaunchScreen.storyboard */,
 				7DB7CC6C2179716D00C8B9B5 /* Info.plist */,
+				7D7F65A3217DBBA100435948 /* GoogleService-Info.plist */,
 				7DB7CC642179716C00C8B9B5 /* Landmark_Remark.xcdatamodeld */,
 			);
 			path = "Landmark Remark";
+			sourceTree = "<group>";
+		};
+		FD4FCBC420D06CF4917A9BC5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				107633E39D7DEE57A13EB706 /* Pods-Landmark Remark.debug.xcconfig */,
+				D7EA48986CBD62634BA5DECB /* Pods-Landmark Remark.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +107,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7DB7CC6F2179716D00C8B9B5 /* Build configuration list for PBXNativeTarget "Landmark Remark" */;
 			buildPhases = (
+				4DAAEBBFA92E741BBA56E393 /* [CP] Check Pods Manifest.lock */,
 				7DB7CC562179716C00C8B9B5 /* Sources */,
 				7DB7CC572179716C00C8B9B5 /* Frameworks */,
 				7DB7CC582179716C00C8B9B5 /* Resources */,
+				83A5D32C21D1C7E4B55E8E04 /* [CP] Copy Pods Resources */,
+				7A6EEE5EF7EF8307876F4A0E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,13 +161,84 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DB7CC73217974A200C8B9B5 /* keys.plist in Resources */,
 				7DB7CC6B2179716D00C8B9B5 /* LaunchScreen.storyboard in Resources */,
+				7D7F65A4217DBBA100435948 /* GoogleService-Info.plist in Resources */,
 				7DB7CC682179716D00C8B9B5 /* Assets.xcassets in Resources */,
 				7DB7CC632179716C00C8B9B5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4DAAEBBFA92E741BBA56E393 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Landmark Remark-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A6EEE5EF7EF8307876F4A0E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Landmark Remark/Pods-Landmark Remark-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Landmark Remark/Pods-Landmark Remark-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83A5D32C21D1C7E4B55E8E04 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Landmark Remark/Pods-Landmark Remark-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Landmark Remark/Pods-Landmark Remark-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7DB7CC562179716C00C8B9B5 /* Sources */ = {
@@ -140,6 +247,7 @@
 			files = (
 				7DB7CC602179716C00C8B9B5 /* ViewController.swift in Sources */,
 				7DB7CC662179716C00C8B9B5 /* Landmark_Remark.xcdatamodeld in Sources */,
+				7DB7CC75217974D100C8B9B5 /* ApiKey.swift in Sources */,
 				7DB7CC5E2179716C00C8B9B5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,6 +392,7 @@
 		};
 		7DB7CC702179716D00C8B9B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 107633E39D7DEE57A13EB706 /* Pods-Landmark Remark.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -302,6 +411,7 @@
 		};
 		7DB7CC712179716D00C8B9B5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7EA48986CBD62634BA5DECB /* Pods-Landmark Remark.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

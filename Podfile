@@ -7,5 +7,7 @@ target 'Landmark Remark' do
 
   # Pods for Landmark Remark
 pod 'GoogleMaps'
+pod 'Firebase/Core'
+pod 'Firebase/Database'
 
 end
