@@ -14,7 +14,6 @@ import FirebaseDatabase
 class ViewController: UIViewController {
 
 	@IBOutlet weak var mapView: GMSMapView!
-	@IBOutlet weak var saveNote: UIBarButtonItem!
 	
 	var ref : DatabaseReference!
 	var handle : DatabaseHandle!
@@ -23,58 +22,99 @@ class ViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view, typically from a nib.
 		
 		ref = Database.database().reference().child("remarks")
-			
-//			.childByAutoId().setValue(["username": "test", "note": "blah blah"])
 		
 		locationManager.delegate = self
 		locationManager.requestWhenInUseAuthorization()
 		
 		loadCoords()
-//		ref.childByAutoId().setValue(["username": "test", "note": "blah blah"])
 	}
-	
-//	func dataTest(user: String, note: String, lat: Double, lng: Double) {
-//		ref.childByAutoId().setValue(["username": user,
-//									  "note": note,
-//									  "lat": lat,
-//									  "lng": lng])
-//	}
+
 	
 	func loadCoords() {
 		ref.observe(.value, with: { (snapshot) in
 			
+			//prevent duplicate markers when Firebase live-updates
+			self.mapView.clear()
+			
+			//Iterate over all Firebase objects, add remarks to mapView
 			for child in snapshot.children {
-				print(child)
-				
-				for notes in snapshot.children.allObjects as! [DataSnapshot] {
-					let noteObj = notes.value as? [String: AnyObject]
-					let lat = noteObj?["lat"]
-					let lng = noteObj?["lng"]
-					let username = noteObj?["username"]
-					let remark = noteObj?["note"]
+				if let remarkSnapshot = child as? DataSnapshot,
+					let remarkItem = RemarkItem(snapshot: remarkSnapshot) {
 					
-					let pos = CLLocationCoordinate2D(latitude: lat as! CLLocationDegrees, longitude: lng as! CLLocationDegrees)
+					let pos = CLLocationCoordinate2D(latitude: remarkItem.lat ,
+													 longitude: remarkItem.lng)
+					
 					let marker = GMSMarker(position: pos)
-					marker.title = username as? String
+					marker.title = remarkItem.user
+					marker.snippet = remarkItem.remark
 					marker.map = self.mapView
-					marker.snippet = remark as? String
 				}
-				
 			}
 		}) { (Error) in
 			print("Error")
 		}
 		
-//		ref.observeSingleEvent(of: .value, with: { (snapshot) in
-//			let value = snapshot.value as? NSDictionary
-//
-//		})
+	}
+	
+	func saveRemark(user: String, remark: String, lat: Double, lng: Double) {
+	
+		let remarkItem = RemarkItem(user: user,
+									remark: remark,
+									lat: lat,
+									lng: lng)
+		
+		//Generate unique node object name
+		let remarkItemRef = self.ref.childByAutoId()
+		
+		remarkItemRef.setValue(remarkItem.toAnyObject())
 	}
 
+	@IBAction func addNoteAction(_ sender: UIBarButtonItem) {
+		
+		if mapView.isMyLocationEnabled {
+			print("add note pressed")
+			
+			let alert = UIAlertController(title: "Leave Remark at your location...", message: nil, preferredStyle: .alert)
+			alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+			
+			alert.addTextField(configurationHandler: { nameField in
+				nameField.placeholder = "Username..."
+			})
+			
+			alert.addTextField(configurationHandler: { remarkField in
+				remarkField.placeholder = "Your remark..."
+			})
+			
+			alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+				
+				let name = alert.textFields?.first?.text
+				let remark = alert.textFields?.last?.text
+				
+				//Only save remark if input is not empty
+				if !(name?.isEmpty)! && !(remark?.isEmpty)! {
+					print("Your name: \(name!)")
+					print("remark: \(remark!)")
+					let pos = self.mapView.myLocation?.coordinate
+					
+					self.saveRemark(user: name!, remark: remark!, lat: (pos?.latitude)!, lng: (pos?.longitude)!)
+				}
 
+			}))
+			
+			self.present(alert, animated: true)
+		}
+			
+		//Show error message if user denied initial location permission request
+		else {
+			let locationAlert = UIAlertController(title: "Location Access Denied", message: "Please enable location access for Landmark Remark" , preferredStyle: .alert)
+			locationAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+			self.present(locationAlert, animated: true, completion: nil)
+		}
+		
+	}
+	
 }
 
 extension ViewController: CLLocationManagerDelegate {
@@ -98,12 +138,8 @@ extension ViewController: CLLocationManagerDelegate {
 			return
 		}
 		
+		//TODO change zoom level
 		mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 2, bearing: 0, viewingAngle: 0)
-		
-//		dataTest(user: "someone", note: "blahcgf", lat: location.coordinate.latitude, lng: location.coordinate.longitude)
-//		ref.childByAutoId().setValue(["username": "test",
-//									  "note": "blah blah",
-//									  "coords": location.coordinate])
 		
 		locationManager.stopUpdatingLocation()
 	}
