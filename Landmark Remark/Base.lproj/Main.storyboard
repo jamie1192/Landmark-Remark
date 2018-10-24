@@ -48,20 +48,64 @@
             <point key="canvasLocation" x="1564" y="-358"/>
         </scene>
         <!--Search-->
-        <scene sceneID="Ti1-HW-ONg">
+        <scene sceneID="4wN-Ua-Csh">
             <objects>
-                <viewController id="jKK-9a-Ohv" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="1u9-Ki-uzR">
+                <tableViewController id="PPI-cz-Md2" customClass="SearchTableViewController" customModule="Landmark_Remark" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="HZy-HE-7qG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="8mf-dq-WfO"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Search" largeTitleDisplayMode="always" id="pZn-yC-Sfq"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dCu-PB-EzI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RemarkTableViewCell" rowHeight="130" id="cV5-dm-o2a" customClass="RemarkTableViewCell" customModule="Landmark_Remark" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="130"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cV5-dm-o2a" id="vOp-Pu-mVf">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="129.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="02C-t7-GfE">
+                                            <rect key="frame" x="16" y="10" width="343" height="38"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="userLabel"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="38" id="W9W-Mi-kq7"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Nz-qn-b1n">
+                                            <rect key="frame" x="16" y="49" width="343" height="70"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="02C-t7-GfE" firstAttribute="trailing" secondItem="vOp-Pu-mVf" secondAttribute="trailingMargin" id="0GF-UX-9TQ"/>
+                                        <constraint firstItem="02C-t7-GfE" firstAttribute="trailing" secondItem="0Nz-qn-b1n" secondAttribute="trailing" id="13B-Xz-KkL"/>
+                                        <constraint firstItem="0Nz-qn-b1n" firstAttribute="bottom" secondItem="vOp-Pu-mVf" secondAttribute="bottomMargin" id="2fd-sN-hVj"/>
+                                        <constraint firstItem="02C-t7-GfE" firstAttribute="leading" secondItem="0Nz-qn-b1n" secondAttribute="leading" id="3ls-xY-Ed7"/>
+                                        <constraint firstItem="02C-t7-GfE" firstAttribute="leading" secondItem="vOp-Pu-mVf" secondAttribute="leadingMargin" id="DR7-ka-6jZ"/>
+                                        <constraint firstItem="0Nz-qn-b1n" firstAttribute="top" secondItem="02C-t7-GfE" secondAttribute="bottom" constant="1" id="FBi-gD-Tph"/>
+                                        <constraint firstItem="02C-t7-GfE" firstAttribute="top" secondItem="vOp-Pu-mVf" secondAttribute="topMargin" constant="-1" id="vaQ-2b-DxN"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="remarkLabel" destination="0Nz-qn-b1n" id="BjO-rd-ocp"/>
+                                    <outlet property="userLabel" destination="02C-t7-GfE" id="zv4-O6-biU"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="PPI-cz-Md2" id="aBZ-YS-STe"/>
+                            <outlet property="delegate" destination="PPI-cz-Md2" id="vWW-9K-KGd"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Search" id="WZV-Ys-X9G"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DKd-xL-hDB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1564" y="330"/>
+            <point key="canvasLocation" x="1524" y="324.28785607196403"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="eJK-ro-cKN">
@@ -105,6 +149,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="WhJ-bc-MXp"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ged-53-hsV">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -130,7 +175,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="jKK-9a-Ohv" kind="relationship" relationship="rootViewController" id="Un9-tp-jLg"/>
+                        <segue destination="PPI-cz-Md2" kind="relationship" relationship="rootViewController" id="iP5-Fq-JP2"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="myU-UE-CSm" userLabel="First Responder" sceneMemberID="firstResponder"/>
